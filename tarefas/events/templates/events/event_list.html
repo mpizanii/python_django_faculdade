@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Eventos</title>
+</head>
+<body>
+    <h1>Eventos</h1>
+    <a href="{% url 'event_create' %}">Criar Evento</a>
+    <ul>
+        {% for event in events %}
+            <li>
+                {{ event.title }} - {{ event.date }} 
+                <a href="{% url 'event_delete' event.pk %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
